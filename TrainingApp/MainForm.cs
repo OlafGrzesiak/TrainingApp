@@ -43,8 +43,48 @@ public partial class MainForm : Form
 
     private void btnAddWorkout_click(object sender, EventArgs e)
     {
-        string wokroutType = txtWorkoutType.Text;
-        int repetitions = Convert.ToInt32(txtRepetitions.Text);
-        int sets = Convert.ToInt32(txtSets.Text);
+        try
+        {
+            string wokroutType = txtWorkoutType.Text;
+            int repetitions = Convert.ToInt32(txtRepetitions.Text);
+            int sets = Convert.ToInt32(txtSets.Text);
+
+            workouts.Add(new Workout { Type = workoutType, Repetitions = repetitions, Sets = sets });
+
+            string message = $"Added workout: {workoutType}, {repetitions} repetitions, {sets} sets";
+
+            ClearInputFields();
+        }
+        catch (FormatException)
+        {
+            MessageBox.Show("Invalid input. Please enter numeric values for repetitions and sets.", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        catch (Exception ex)
+        {
+            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
     }
+
+    private void btinDisplayWorkouts_Click(object sender, EventArgs e)
+    {
+        if (workouts.Count == 0)
+        {
+            MessageBox.Show("No workouts to display.", "Workout List", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        else
+        {
+            string workoutList = "Workout List:\n";
+            foreach (var workout in workouts)
+            {
+                workoutList += $"{workout.Type}, {workout.Repetitions} repetitions, {workout.Sets} sets\n";
+            }
+
+            MessageBox.Show(workoutList, "Workout List", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+
+
 }
