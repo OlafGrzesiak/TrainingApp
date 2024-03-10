@@ -1,6 +1,6 @@
 # Training App
 
-The Training App is a straightforward yet powerful workout tracking application crafted with C# and .NET. This application empowers users to seamlessly add and display diverse workout sessions, meticulously recording essential details such as workout type, repetitions, and sets.
+The Training App is a workout tracking application crafted with C# and .NET. This application empowers users to seamlessly add and display diverse workout sessions, meticulously recording essential details such as workout type, repetitions, and sets.
 
 ## Features
 - **Add Workout**: Users effortlessly input workout details and log them with precision.
