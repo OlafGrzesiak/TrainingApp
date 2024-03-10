@@ -33,3 +33,5 @@ Explore the following areas for future development and improvement:
 Stay updated with the latest changes and improvements through the following hotfixes:
 - **Hotfix 1.1.1**: The code has been modified (because I made it incorrectly) in the MainForm to work together with the design file.
 
+## Current status
+The application somehow works. The issue lies in adding values.
