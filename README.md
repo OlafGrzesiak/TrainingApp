@@ -34,4 +34,4 @@ Stay updated with the latest changes and improvements through the following hotf
 - **Hotfix 1.1.1**: The code has been modified (because I made it incorrectly) in the MainForm to work together with the design file.
 - **Hotfix 1.1.2**: After changes in btnAddWorkout method, application works corretly.
 ## Current status
-The application somehow works. The issue lies in adding values.
+The application works. I'm focusing on the appearance of the application now.
