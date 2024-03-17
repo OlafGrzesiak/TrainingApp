@@ -38,19 +38,40 @@ namespace TrainingApp
                 int repetitions = Convert.ToInt32(txtRepetitions.Text);
                 int sets = Convert.ToInt32(txtSets.Text);
 
-                workouts.Add(new Workout { Type = workoutType, Repetitions = repetitions, Sets = sets });
+                var obj = workouts.FirstOrDefault(x => x.Type == workoutType);
+                if (obj == null)
+                {
+                    workouts.Add(
+                        new Workout
+                        {
+                            Type = workoutType,
+                            Repetitions = repetitions,
+                            Sets = sets
+                        }
+                    );
 
-                
-                string message = $"Added workout: {workoutType}, {repetitions} repetitions, {sets} sets";           // For now, we'll just display the information in a MessageBox.
-                MessageBox.Show(message, "Workout Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string message = $"Added workout: {workoutType}, {repetitions} repetitions, {sets} sets";
+                    MessageBox.Show(message, "Workout Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ClearInputFields();
+                    ClearInputFields();
+                }
+                else
+                {
+                    obj.Repetitions += repetitions;
+                    obj.Sets += sets;
+
+                    string message = $"Updated workout: {workoutType}, {obj.Repetitions} repetitions, {obj.Sets} sets";
+                    MessageBox.Show(message, "Workout Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ClearInputFields();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void btnDisplayWorkouts_Click(object sender, EventArgs e)

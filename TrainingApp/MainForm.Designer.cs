@@ -17,7 +17,7 @@
 {
     this.SuspendLayout();
 
-    // Ustawienia dla txtWorkoutType
+  
     txtWorkoutType = new System.Windows.Forms.TextBox
     {
         Location = new System.Drawing.Point(50, 30),
@@ -31,7 +31,7 @@
     txtWorkoutType.Enter += TextBox_Enter;
     txtWorkoutType.Leave += TextBox_Leave;
 
-    // Ustawienia dla txtRepetitions
+    
     txtRepetitions = new System.Windows.Forms.TextBox
     {
         Location = new System.Drawing.Point(50, 70),
@@ -45,7 +45,7 @@
     txtRepetitions.Enter += TextBox_Enter;
     txtRepetitions.Leave += TextBox_Leave;
 
-    // Ustawienia dla txtSets
+    
     txtSets = new System.Windows.Forms.TextBox
     {
         Location = new System.Drawing.Point(50, 110),
@@ -59,7 +59,7 @@
     txtSets.Enter += TextBox_Enter;
     txtSets.Leave += TextBox_Leave;
 
-    // Ustawienia dla btnAddWorkout
+    
     btnAddWorkout = new System.Windows.Forms.Button
     {
         Text = "Add Workout",
@@ -72,7 +72,7 @@
     };
     btnAddWorkout.Click += new System.EventHandler(this.btnAddWorkout_Click);
 
-    // Ustawienia dla btnDisplayWorkouts
+    
     btnDisplayWorkouts = new System.Windows.Forms.Button
     {
         Text = "Display Workouts",
